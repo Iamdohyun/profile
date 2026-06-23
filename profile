@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김도현 — Product Owner Portfolio</title>
+<meta name="description" content="운영의 병목을 제품의 기회로 바꾸는 B2B SaaS Product Owner, 김도현의 포트폴리오.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root {
+  --black: #0C0B0A;
+  --paper: #F2EEE4;
+  --paper2: #E9E4D6;
+  --accent: #FF3B00;
+  --accent2: #1A3CFF;
+  --gray: #6E6A60;
+  --ink: #2A2823;
+  --border: #CFC9BA;
+  --card: #FBFAF6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  background: var(--paper);
+  color: var(--black);
+  overflow-x: hidden;
+  position: relative;
+}
+::selection { background: var(--accent); color: var(--paper); }
+
+/* ── GRAIN OVERLAY ── */
+.grain {
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  opacity: 0.4; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* ── EDITORIAL FRAME ── */
+.frame {
+  position: fixed; inset: 14px; z-index: 90; pointer-events: none;
+  border: 1px solid var(--border);
+}
+
+/* ── SCROLL PROGRESS ── */
+.progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--accent); z-index: 200; transition: width 0.1s linear;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(242,238,228,0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif; font-size: 24px;
+  letter-spacing: 3px; color: var(--black); display: flex; align-items: center; gap: 8px;
+}
+.nav-logo::before { content: ''; width: 9px; height: 9px; background: var(--accent); }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a {
+  font-size: 12px; font-weight: 500; color: var(--gray);
+  text-decoration: none; letter-spacing: 0.8px; transition: color 0.2s;
+  position: relative; padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 1.5px; background: var(--accent); transition: width 0.25s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--black); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a.active { color: var(--accent); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: grid; grid-template-columns: 1.05fr 1fr;
+  padding-top: 80px; position: relative;
+}
+.hero-left {
+  padding: 80px 48px; display: flex; flex-direction: column;
+  justify-content: center; position: relative; z-index: 2;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--black); color: var(--paper);
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  padding: 7px 15px; margin-bottom: 34px; width: fit-content;
+  font-family: 'DM Mono', monospace;
+}
+.hero-tag .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(86px, 9.5vw, 150px);
+  line-height: 0.86; letter-spacing: -1px; margin-bottom: 14px;
+}
+.hero-name em { color: var(--accent); font-style: normal; }
+.hero-role {
+  font-size: 12px; font-weight: 500; letter-spacing: 3.5px;
+  color: var(--gray); margin-bottom: 38px; text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  display: flex; align-items: center; gap: 14px;
+}
+.hero-role::before { content: ''; width: 36px; height: 1px; background: var(--black); }
+.hero-desc {
+  font-size: 17px; line-height: 1.8; color: var(--ink); max-width: 500px;
+  margin-bottom: 42px; font-weight: 300;
+}
+.hero-desc strong { color: var(--black); font-weight: 700; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary, .btn-secondary {
+  padding: 15px 30px; font-size: 12px; font-weight: 700;
+  letter-spacing: 1.2px; text-decoration: none; text-transform: uppercase;
+  transition: all 0.22s; border: 2px solid; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.btn-primary:hover { background: var(--black); border-color: var(--black); transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--accent); }
+.btn-secondary { background: transparent; color: var(--black); border-color: var(--black); }
+.btn-secondary:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--black); }
+
+.hero-right {
+  background: var(--black); display: flex; flex-direction: column;
+  justify-content: center; padding: 70px 48px;
+  position: relative; overflow: hidden;
+}
+.hero-right::before {
+  content: 'PO';
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(240px, 30vw, 360px); line-height: 1;
+  color: rgba(255,59,0,0.07);
+  position: absolute; right: -30px; top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; animation: drift 14s ease-in-out infinite;
+}
+@keyframes drift {
+  0%,100% { transform: translateY(-50%); }
+  50% { transform: translateY(-54%); }
+}
+.stats-eyebrow {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px;
+  color: #777; text-transform: uppercase; margin-bottom: 18px;
+  position: relative; z-index: 2;
+}
+.stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  width: 100%; position: relative; z-index: 2;
+}
+.stat-card {
+  background: #161513; padding: 32px 26px;
+  position: relative; overflow: hidden; transition: background 0.3s;
+}
+.stat-card:hover { background: #201E1B; }
+.stat-card::after {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%; background: var(--accent);
+  transform: scaleY(0.25); transform-origin: top; transition: transform 0.3s;
+}
+.stat-card:hover::after { transform: scaleY(1); }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 58px; color: var(--paper); line-height: 1; margin-bottom: 7px;
+}
+.stat-num .unit { color: var(--accent); }
+.stat-label { font-size: 12px; color: #8C887E; font-weight: 400; line-height: 1.5; }
+.stat-sub {
+  font-family: 'DM Mono', monospace; font-size: 9.5px; color: #6E6A60;
+  line-height: 1.5; margin-top: 7px; letter-spacing: 0.2px;
+}
+
+.scroll-cue {
+  position: absolute; bottom: 30px; left: 48px; z-index: 3;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  color: var(--gray); display: flex; align-items: center; gap: 10px;
+}
+.scroll-cue .line {
+  width: 40px; height: 1px; background: var(--gray); position: relative; overflow: hidden;
+}
+.scroll-cue .line::after {
+  content: ''; position: absolute; inset: 0; background: var(--accent);
+  animation: slide 1.8s infinite;
+}
+@keyframes slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ── MARQUEE ── */
+.marquee {
+  background: var(--black); color: var(--paper);
+  padding: 16px 0; overflow: hidden; white-space: nowrap;
+  border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+}
+.marquee-track { display: inline-flex; gap: 28px; animation: marquee 32s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee span {
+  font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px;
+  display: inline-flex; align-items: center; gap: 28px;
+}
+.marquee span::after { content: '◆'; color: var(--accent); font-size: 11px; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ── SECTION BASE ── */
+section { padding: 110px 48px; position: relative; }
+.section-header { margin-bottom: 66px; }
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 3px; color: var(--accent);
+  text-transform: uppercase; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow .idx { color: var(--gray); }
+.section-eyebrow::after { content: ''; flex: 0 0 48px; height: 1px; background: var(--accent); }
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(46px, 5.5vw, 80px); line-height: 0.94; letter-spacing: -0.5px;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: start;
+}
+.about-text { font-size: 16px; line-height: 1.9; color: var(--ink); font-weight: 300; }
+.about-text p + p { margin-top: 20px; }
+.about-text strong { color: var(--black); font-weight: 700; }
+.about-text .lead {
+  font-size: 21px; line-height: 1.65; font-weight: 500; color: var(--black);
+  margin-bottom: 28px; padding-left: 20px; border-left: 3px solid var(--accent);
+}
+
+.skills-wrap { display: flex; flex-direction: column; gap: 22px; }
+.skill-group-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  color: var(--gray); text-transform: uppercase;
+  font-family: 'DM Mono', monospace; margin-bottom: 11px;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  padding: 7px 14px; font-size: 12px; font-weight: 500;
+  border: 1.5px solid var(--border); color: var(--ink);
+  background: var(--card); transition: all 0.2s; cursor: default;
+}
+.skill-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+/* ── PRINCIPLES ── */
+.principles {
+  margin-top: 88px; display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.principle {
+  background: var(--card); padding: 36px 30px;
+  transition: background 0.25s; position: relative;
+}
+.principle:hover { background: var(--black); }
+.principle:hover .principle-num,
+.principle:hover .principle-title,
+.principle:hover .principle-en { color: var(--paper); }
+.principle:hover .principle-desc { color: #B5B1A6; }
+.principle-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--accent);
+  line-height: 1; margin-bottom: 18px;
+}
+.principle-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; transition: color 0.25s; }
+.principle-en {
+  font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray);
+  letter-spacing: 1px; margin-bottom: 14px; transition: color 0.25s;
+}
+.principle-desc { font-size: 14px; line-height: 1.7; color: var(--ink); font-weight: 300; transition: color 0.25s; }
+
+/* ── PROJECTS ── */
+#projects { background: var(--paper2); }
+.project-item { border-top: 2px solid var(--black); }
+.project-header {
+  display: grid; grid-template-columns: 64px 1fr auto;
+  align-items: center; gap: 24px; padding: 38px 0; cursor: pointer;
+}
+.project-header:hover .project-title { color: var(--accent); }
+.project-num {
+  font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gray); font-weight: 500;
+}
+.project-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 3.6vw, 50px); line-height: 1; transition: color 0.2s;
+}
+.project-tags { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.ptag {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  padding: 5px 11px; text-transform: uppercase; font-family: 'DM Mono', monospace;
+}
+.ptag.blue { background: var(--accent2); color: #fff; }
+.ptag.red { background: var(--accent); color: #fff; }
+.ptag.dark { background: var(--black); color: #fff; }
+.project-expand {
+  width: 44px; height: 44px; border: 2px solid var(--black);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; transition: all 0.3s; user-select: none;
+}
+.project-header:hover .project-expand { background: var(--accent); border-color: var(--accent); color: #fff; }
+.project-item.open .project-expand { transform: rotate(45deg); background: var(--black); border-color: var(--black); color: #fff; }
+
+.project-body {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.project-item.open .project-body { grid-template-rows: 1fr; }
+.project-body-inner { overflow: hidden; }
+.project-body-pad { padding: 6px 0 58px 88px; }
+
+.project-summary {
+  font-size: 16px; line-height: 1.8; color: var(--ink); font-weight: 300;
+  max-width: 740px; margin-bottom: 44px;
+  padding: 22px 26px; border-left: 3px solid var(--accent); background: var(--card);
+}
+.project-summary strong { color: var(--black); font-weight: 700; }
+
+.case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-bottom: 44px; }
+.case-card { background: var(--black); padding: 32px 26px; }
+.case-card-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  color: var(--accent); text-transform: uppercase; font-family: 'DM Mono', monospace;
+  margin-bottom: 16px;
+}
+.case-card-content { font-size: 14px; color: #C7C3B8; line-height: 1.75; font-weight: 300; }
+.case-card-content strong { color: #fff; font-weight: 600; }
+
+/* ── HYPOTHESIS / VALIDATION STRIP ── */
+.hypo {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  margin: -42px 0 44px; border: 1.5px solid var(--black); border-top: none;
+}
+.hypo-cell { background: var(--card); padding: 22px 24px; position: relative; }
+.hypo-cell.verify { background: #FFF1EC; }
+.hypo-label {
+  font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 9px;
+  display: flex; align-items: center; gap: 8px;
+}
+.hypo-label .pin { color: var(--gray); }
+.hypo-cell.verify .hypo-label { color: var(--accent); }
+.hypo-cell.assume .hypo-label { color: var(--accent2); }
+.hypo-text { font-size: 13.5px; line-height: 1.78; color: var(--ink); font-weight: 300; }
+.hypo-text strong { color: var(--black); font-weight: 700; }
+
+/* ── BUILDS SECTION ── */
+#builds { background: var(--black); color: var(--paper); }
+#builds .section-eyebrow { color: var(--accent); }
+#builds .section-eyebrow .idx { color: #777; }
+#builds .section-eyebrow::after { background: var(--accent); }
+#builds .section-title { color: var(--paper); }
+.builds-intro {
+  font-size: 16px; line-height: 1.85; color: #B5B1A6; font-weight: 300;
+  max-width: 720px; margin: -32px 0 50px;
+}
+.builds-intro strong { color: var(--paper); font-weight: 600; }
+.build-card { border: 1.5px solid #2C2A26; background: #161513; }
+.build-head {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 28px 32px 22px; border-bottom: 1.5px solid #2C2A26;
+}
+.build-kicker {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  color: var(--accent); text-transform: uppercase;
+}
+.build-name {
+  font-family: 'Bebas Neue', sans-serif; font-size: clamp(30px,3.4vw,46px);
+  line-height: 1; letter-spacing: 0.3px; color: var(--paper);
+}
+.build-stack { display: flex; gap: 7px; flex-wrap: wrap; margin-left: auto; }
+.build-stack span {
+  font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
+  letter-spacing: 0.5px; padding: 5px 10px; border: 1px solid #3A3833;
+  color: #8C887E;
+}
+.build-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: #2C2A26; }
+.build-step { background: #161513; padding: 24px 22px; }
+.build-step-n {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  color: var(--accent); margin-bottom: 11px;
+}
+.build-step-t { font-size: 14px; font-weight: 700; color: var(--paper); margin-bottom: 7px; }
+.build-step-d { font-size: 12.5px; line-height: 1.65; color: #8C887E; font-weight: 300; }
+.build-prob {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  background: #2C2A26; border-top: 2px solid #2C2A26;
+}
+.build-prob-cell { background: #161513; padding: 26px 30px; }
+.build-prob-cell.result { background: #1E1A16; }
+.build-prob-label {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 12px; color: var(--gray);
+}
+.build-prob-cell.result .build-prob-label { color: var(--accent); }
+.build-prob-text { font-size: 13.5px; line-height: 1.8; color: #B5B1A6; font-weight: 300; }
+.build-prob-text strong { color: var(--paper); font-weight: 600; }
+.build-metrics {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+  background: #2C2A26; border-top: 2px solid #2C2A26;
+}
+.build-metric { background: #161513; padding: 28px 26px; text-align: left; }
+.build-metric-n {
+  font-family: 'Bebas Neue', sans-serif; font-size: 46px; color: var(--accent); line-height: 1;
+}
+.build-metric-l { font-size: 12.5px; color: #8C887E; line-height: 1.55; margin-top: 8px; }
+.build-metric-l strong { color: var(--paper); font-weight: 600; }
+.build-note {
+  padding: 22px 32px; font-size: 13px; color: #8C887E; line-height: 1.7;
+  font-weight: 300; border-top: 1.5px solid #2C2A26;
+}
+.build-note strong { color: #B5B1A6; font-weight: 600; }
+
+/* ── FIGURE / DIAGRAM ── */
+.figure {
+  margin: 0 0 44px; border: 1.5px solid var(--black); background: var(--card);
+}
+.figure-head {
+  background: var(--black); color: var(--paper);
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  padding: 13px 24px; display: flex; align-items: center; gap: 10px;
+}
+.figure-head .tag { color: var(--accent); }
+.figure-body { padding: 30px 26px; }
+.figure-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.figure svg { display: block; width: 100%; height: auto; }
+.figure-scroll svg { min-width: 560px; }
+.figure-cap {
+  font-size: 12.5px; color: var(--gray); line-height: 1.7;
+  padding: 0 26px 24px; font-weight: 300;
+}
+.figure-cap strong { color: var(--ink); font-weight: 600; }
+
+/* ── BEFORE / AFTER BARS ── */
+.ba-block { margin: 0 0 26px; }
+.ba-title {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  color: var(--gray); text-transform: uppercase; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.ba-title::before { content: ''; width: 18px; height: 2px; background: var(--accent); }
+.ba-grid { display: flex; flex-direction: column; gap: 14px; }
+.ba-row { display: grid; grid-template-columns: 130px 1fr; gap: 16px; align-items: center; }
+.ba-label { font-size: 12.5px; color: var(--ink); font-weight: 500; line-height: 1.4; }
+.ba-bars { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.ba-bar {
+  display: flex; align-items: center; gap: 10px; height: 26px;
+}
+.ba-track {
+  height: 100%; display: flex; align-items: center; padding: 0 10px;
+  font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500;
+  white-space: nowrap; min-width: fit-content; box-sizing: border-box;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.ba-bar.before .ba-track { background: var(--paper2); color: var(--gray); border: 1px solid var(--border); }
+.ba-bar.after .ba-track { background: var(--accent); color: var(--paper); }
+.ba-bar.after.blue .ba-track { background: var(--accent2); }
+.ba-tag {
+  font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px;
+  color: var(--gray); width: 46px; flex-shrink: 0; text-transform: uppercase;
+}
+.ba-delta {
+  font-family: 'Bebas Neue', sans-serif; font-size: 20px; line-height: 1;
+  color: var(--accent); flex-shrink: 0; min-width: 52px;
+}
+.ba-bar.after.blue + .ba-delta, .ba-delta.blue { color: var(--accent2); }
+
+.outcomes { margin-top: 38px; }
+.outcomes-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 30px; margin-bottom: 18px;
+  color: var(--black); display: flex; align-items: center; gap: 12px;
+}
+.outcomes-title::before { content: ''; width: 22px; height: 3px; background: var(--accent); }
+.outcome-list { display: flex; flex-direction: column; gap: 10px; }
+.outcome-item {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 18px 22px; background: var(--card);
+  border-left: 3px solid var(--border); transition: all 0.2s;
+}
+.outcome-item:hover { border-color: var(--accent); transform: translateX(4px); }
+.outcome-item.highlight { border-color: var(--accent); background: #FFF1EC; }
+.outcome-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 32px;
+  color: var(--accent); line-height: 1; white-space: nowrap; min-width: 88px;
+}
+.outcome-text { font-size: 14px; color: var(--ink); line-height: 1.6; padding-top: 4px; }
+.outcome-text strong { color: var(--black); font-weight: 700; }
+
+.retro {
+  margin-top: 32px; padding: 22px 26px; background: #FFF1EC;
+  border-left: 3px solid var(--accent);
+}
+.retro.blue { background: #ECEFFF; border-color: var(--accent2); }
+.retro-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  color: var(--accent); font-family: 'DM Mono', monospace; margin-bottom: 9px;
+}
+.retro.blue .retro-label { color: var(--accent2); }
+.retro-text { font-size: 14px; color: var(--ink); line-height: 1.75; }
+
+/* ── DEEP DIVE ── */
+.deepdive { margin: 0 0 44px; background: var(--card); border: 1.5px solid var(--black); }
+.deepdive-head {
+  background: var(--black); color: var(--paper);
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  padding: 13px 24px; display: flex; align-items: center; gap: 10px;
+}
+.deepdive-head .tag { color: var(--accent); }
+.deepdive-body { padding: 26px 26px 28px; }
+.deepdive-body h4 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+  letter-spacing: 0.3px; margin-bottom: 12px;
+}
+.deepdive-body p { font-size: 14px; line-height: 1.85; color: var(--ink); font-weight: 300; }
+.deepdive-body p strong { color: var(--black); font-weight: 700; }
+
+/* ── OTHER WORK ── */
+.other-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); }
+.other-card {
+  background: var(--card); padding: 38px 30px;
+  transition: transform 0.25s, background 0.25s; position: relative;
+}
+.other-card:hover { transform: translateY(-4px); }
+.other-meta {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px;
+  color: var(--gray); margin-bottom: 16px; display: flex; justify-content: space-between;
+}
+.other-title { font-size: 18px; font-weight: 700; line-height: 1.35; margin-bottom: 12px; }
+.other-desc { font-size: 14px; color: var(--ink); line-height: 1.7; font-weight: 300; }
+.other-card::before {
+  content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.other-card:hover::before { transform: scaleX(1); }
+
+/* ── EXPERIENCE ── */
+.exp-list { display: flex; flex-direction: column; }
+.exp-item {
+  display: grid; grid-template-columns: 220px 1fr; gap: 48px;
+  padding: 42px 0; border-top: 1px solid var(--border);
+}
+.exp-period {
+  font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gray); padding-top: 4px;
+}
+.exp-period strong { color: var(--accent); font-weight: 500; }
+.exp-company { font-size: 20px; font-weight: 700; margin-bottom: 5px; }
+.exp-role {
+  font-size: 13px; color: var(--accent); font-weight: 600;
+  margin-bottom: 13px; letter-spacing: 0.5px;
+}
+.exp-desc { font-size: 14px; color: var(--ink); line-height: 1.75; font-weight: 300; }
+
+.recognition {
+  margin-top: 56px; display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.rec-item { background: var(--black); padding: 30px 26px; }
+.rec-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--accent); line-height: 1;
+}
+.rec-text { font-size: 13px; color: #B5B1A6; line-height: 1.6; margin-top: 8px; }
+.rec-text strong { color: #fff; font-weight: 600; }
+
+/* ── CONTACT ── */
+#contact { background: var(--black); color: var(--paper); padding: 130px 48px; }
+#contact .section-eyebrow { color: var(--accent); }
+#contact .section-eyebrow .idx { color: #777; }
+#contact .section-eyebrow::after { background: var(--accent); }
+#contact .section-title { color: var(--paper); margin-bottom: 22px; }
+.contact-sub { font-size: 16px; color: #8C887E; margin-bottom: 46px; font-weight: 300; }
+.contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
+.contact-link {
+  display: flex; align-items: center; gap: 11px;
+  padding: 18px 30px; border: 1.5px solid #2E2C28;
+  color: var(--paper); text-decoration: none; font-size: 14px;
+  font-weight: 500; letter-spacing: 0.4px; transition: all 0.2s;
+}
+.contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translate(-2px,-2px); box-shadow: 4px 4px 0 rgba(255,59,0,0.25); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 26px 48px; background: #060606; color: #56544E;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; font-family: 'DM Mono', monospace; flex-wrap: wrap; gap: 8px;
+}
+
+/* ── ANIMATIONS ── */
+.fade-up { opacity: 0; transform: translateY(34px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.hero-left > * { opacity: 0; transform: translateY(24px); animation: rise 0.8s forwards; }
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+.stat-card { opacity: 0; transform: translateY(24px); animation: rise 0.7s forwards; }
+.stat-card:nth-child(1) { animation-delay: 0.5s; }
+.stat-card:nth-child(2) { animation-delay: 0.6s; }
+.stat-card:nth-child(3) { animation-delay: 0.7s; }
+.stat-card:nth-child(4) { animation-delay: 0.8s; }
+@keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 14px 22px; }
+  .nav-links { display: none; }
+  .frame { inset: 8px; }
+  .hero { grid-template-columns: 1fr; padding-top: 70px; }
+  .hero-left { padding: 70px 24px 56px; }
+  .hero-right { padding: 56px 24px 70px; }
+  .scroll-cue { left: 24px; }
+  section { padding: 76px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  .principles { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .other-grid { grid-template-columns: 1fr; }
+  .hypo { grid-template-columns: 1fr; margin-top: -42px; }
+  .build-flow { grid-template-columns: 1fr 1fr; }
+  .build-prob { grid-template-columns: 1fr; }
+  .build-metrics { grid-template-columns: 1fr; }
+  .build-head { padding: 24px 22px 20px; }
+  .build-stack { margin-left: 0; }
+  .builds-intro { margin-top: -16px; }
+  .figure-body { padding: 22px 16px; }
+  .figure-scroll {
+    border: 1px dashed var(--border);
+    background:
+      linear-gradient(90deg, var(--card) 30%, transparent),
+      linear-gradient(90deg, transparent, var(--card) 70%) 100% 0,
+      radial-gradient(farthest-side at 0 50%, rgba(0,0,0,0.12), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,0.12), transparent) 100% 0;
+    background-repeat: no-repeat;
+    background-size: 32px 100%, 32px 100%, 14px 100%, 14px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+  .figure-scroll::-webkit-scrollbar { height: 5px; }
+  .figure-scroll::-webkit-scrollbar-thumb { background: var(--accent); }
+  .build-card .figure-scroll { border-color: #3A3833; }
+  .ba-row { grid-template-columns: 1fr; gap: 7px; }
+  .ba-label { font-size: 12px; }
+  .recognition { grid-template-columns: 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: 10px; }
+  .project-body-pad { padding-left: 0; }
+  .project-header { grid-template-columns: 44px 1fr auto; gap: 14px; }
+  .marquee span { font-size: 18px; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .hero-cta { flex-direction: column; }
+  .btn-primary, .btn-secondary { justify-content: center; }
+}
+
+@media print {
+  nav, .progress, .grain, .frame, .scroll-cue, .marquee { display: none !important; }
+  .project-body { grid-template-rows: 1fr !important; }
+  .project-body-inner { overflow: visible !important; }
+  .project-expand { display: none; }
+  .hero, .hero-left > *, .stat-card { min-height: auto; opacity: 1 !important; transform: none !important; animation: none !important; }
+  .fade-up { opacity: 1 !important; transform: none !important; }
+  section { padding: 40px 32px; }
+  body { background: #fff; }
+}
+
+/* ===== LOCAL FONT MAPPING (offline render — KR-extracted OTF) ===== */
+@font-face{font-family:'Noto Sans CJK KR';font-weight:100;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-Thin.otf') format('opentype');}
+@font-face{font-family:'Noto Sans CJK KR';font-weight:300;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-Light.otf') format('opentype');}
+@font-face{font-family:'Noto Sans CJK KR';font-weight:350;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-DemiLight.otf') format('opentype');}
+@font-face{font-family:'Noto Sans CJK KR';font-weight:400;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-Regular.otf') format('opentype');}
+@font-face{font-family:'Noto Sans CJK KR';font-weight:500;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-Medium.otf') format('opentype');}
+@font-face{font-family:'Noto Sans CJK KR';font-weight:700;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-Bold.otf') format('opentype');}
+@font-face{font-family:'Noto Sans CJK KR';font-weight:900;font-style:normal;src:url('/home/claude/fonts_kr/NotoSansKR-Black.otf') format('opentype');}
+@font-face{font-family:'Bebas Neue';font-weight:400;font-style:normal;src:url('/usr/share/fonts/truetype/custom/BebasNeue-Regular.ttf') format('truetype');}
+@font-face{font-family:'DM Mono';font-weight:400;font-style:normal;src:url('/usr/share/fonts/truetype/custom/DMMono-Regular.ttf') format('truetype');}
+@font-face{font-family:'DM Mono';font-weight:500;font-style:normal;src:url('/usr/share/fonts/truetype/custom/DMMono-Medium.ttf') format('truetype');}
+
+/* ===== PAGE SETUP ===== */
+@page{ size: A4 landscape; margin: 0; }
+
+/* ===== PRINT / PDF OPTIMIZATION (overrides the earlier @media print) ===== */
+@media print{
+  *{ -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* HERO as a full-bleed cover page */
+  .hero{ min-height: 100vh; break-after: page; padding-top: 48px; align-content: center; }
+  .hero-left{ padding: 40px 48px; }
+  .hero-right{ padding: 40px 48px; }
+  .marquee{ display: none !important; }
+
+  /* Big sections open on a fresh page; short sections flow to fill space.
+     Dark sections (builds, contact) are isolated for clean page edges. */
+  #projects, #builds, #contact{ break-before: page; }
+  #proj2, #other{ break-before: page; }
+  #builds{ break-after: page; }
+
+  /* Pull stranded card rows up by collapsing the large editorial gaps
+     (these huge margins are designed for continuous web scroll, not paged). */
+  .section-header{ margin-bottom: 30px; }
+  .principles{ margin-top: 34px; }
+  .recognition{ margin-top: 30px; }
+  .about-body{ margin-bottom: 0; }
+
+  /* Keep headers attached to following content */
+  .section-header, .section-title, .section-eyebrow,
+  .build-head, .figure-head, .deepdive-head, .outcomes-title, .ba-title{ break-after: avoid; }
+
+  /* Don't split these blocks across a page boundary */
+  .case-grid, .hypo, .build-prob, .build-metrics, .stats-grid,
+  .principles, .other-grid, .recognition, .build-flow,
+  .outcome-item, .ba-row, .exp-item, .retro, .figure, .deepdive,
+  .project-summary, .rec-item, .build-note{ break-inside: avoid; }
+
+  /* Tighter, balanced section padding for paged media */
+  section{ padding: 32px 44px; }
+  #contact{ padding: 70px 44px; }
+  #builds{ padding-top: 50px; }
+}
+
+/* ===== INTERACTIVE ADD-ONS (web) ===== */
+button.contact-link { background: transparent; cursor: pointer; font-size: 14px; font-weight: 500; font-family: 'Noto Sans CJK KR', sans-serif; }
+.contact-link.revealed { border-color: var(--accent); color: var(--accent); }
+
+/* Experience — role progression timeline */
+.exp-track { margin-top: 20px; border-left: 2px solid var(--border); padding-left: 20px; display: flex; flex-direction: column; gap: 16px; }
+.exp-step { position: relative; }
+.exp-step::before { content: ''; position: absolute; left: -26px; top: 4px; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; }
+.exp-step:last-child::before { background: var(--accent2); }
+.exp-step-period { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--gray); }
+.exp-step-role { font-size: 15px; font-weight: 700; color: var(--black); margin: 3px 0 4px; }
+.exp-step-desc { font-size: 13.5px; line-height: 1.6; color: var(--ink); font-weight: 300; }
+
+/* Other Work — expandable detail */
+.other-extra { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+.other-card.open .other-extra { max-height: 680px; }
+.other-extra-inner { padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border); }
+.other-extra h5 { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; color: var(--gray); margin: 14px 0 8px; font-weight: 500; }
+.other-extra h5:first-child { margin-top: 0; }
+.other-extra ul { margin: 0; padding-left: 16px; }
+.other-extra li { font-size: 13px; line-height: 1.65; color: var(--ink); font-weight: 300; margin-bottom: 5px; }
+.other-extra li strong { color: var(--black); font-weight: 700; }
+.other-more { margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 7px; }
+.other-more::before { content: '+'; font-size: 15px; line-height: 1; }
+.other-card.open .other-more::before { content: '\2013'; }
+
+/* Diagram zoom lightbox */
+.zoom-overlay { position: fixed; inset: 0; background: rgba(12,11,10,0.93); z-index: 500; display: none; align-items: center; justify-content: center; padding: 48px; cursor: zoom-out; }
+.zoom-overlay.open { display: flex; }
+.zoom-inner { width: 100%; max-width: 1120px; max-height: 88vh; overflow: auto; }
+.zoom-inner svg { width: 100%; height: auto; }
+.zoom-hint { position: fixed; bottom: 22px; left: 0; right: 0; text-align: center; color: var(--gray); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; }
+.zoom-close { position: fixed; top: 22px; right: 26px; width: 44px; height: 44px; background: none; border: 1px solid #3A3833; color: var(--paper); font-size: 20px; cursor: pointer; border-radius: 50%; }
+.zoom-close:hover { border-color: var(--accent); color: var(--accent); }
+
+@media print { .other-extra { max-height: none !important; } .other-more, .zoom-overlay { display: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="frame"></div>
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">김도현</div>
+  <ul class="nav-links">
+    <li><a href="#about" data-sec="about">소개</a></li>
+    <li><a href="#projects" data-sec="projects">프로젝트</a></li>
+    <li><a href="#other" data-sec="other">담당 영역</a></li>
+    <li><a href="#builds" data-sec="builds">직접 만든 것</a></li>
+    <li><a href="#experience" data-sec="experience">경력</a></li>
+    <li><a href="#contact" data-sec="contact">연락</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><span class="dot"></span> B2B SAAS PRODUCT OWNER · 4년차</div>
+    <h1 class="hero-name">김<em>도</em>현</h1>
+    <p class="hero-role">Product Owner / Platform Designer</p>
+    <p class="hero-desc">
+      사용자·공급자·운영자가 뒤엉킨 <strong>B2B 플랫폼</strong>에서
+      운영의 병목을 <strong>제품의 기회</strong>로 바꿉니다.
+      요구사항 정의부터 정책·권한, 결제·정산 구조까지 직접 설계해
+      <strong>비즈니스 임팩트</strong>로 연결합니다.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">프로젝트 보기 →</a>
+      <a href="#contact" class="btn-secondary">연락하기</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-eyebrow">// BY THE NUMBERS</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num"><span class="count">8</span><span class="unit">억</span></div>
+        <div class="stat-label">연간 IT 비용<br>절감</div>
+        <div class="stat-sub">ROI 모델 기반 — 서버·보안<br>유지비, 인력 재분배 실집행</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="count">2</span><span class="unit">억</span></div>
+        <div class="stat-label">신규 매출<br>창출</div>
+        <div class="stat-sub">식권 PG 추가 결제 로직<br>연간 환산 매출</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="count">14</span><span class="unit">건</span></div>
+        <div class="stat-label">특허 출원</div>
+        <div class="stat-sub">출입보안·회의실·정산·면접 등<br>담당 도메인 전반</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="count">95</span><span class="unit">%</span></div>
+        <div class="stat-label">1개월 내<br>앱 침투율</div>
+        <div class="stat-sub">스마트오피스 통합 앱<br>사옥 이전 후 전 임직원 대상</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span> SCROLL</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>PRODUCT OWNER</span><span>식권 결제·정산 플랫폼</span><span>스마트오피스</span>
+    <span>ATS 채용 시스템</span><span>IT 포트폴리오 ROI</span><span>END-TO-END</span>
+    <span>정책·권한 설계</span><span>데이터 기반 의사결정</span>
+    <span>PRODUCT OWNER</span><span>식권 결제·정산 플랫폼</span><span>스마트오피스</span>
+    <span>ATS 채용 시스템</span><span>IT 포트폴리오 ROI</span><span>END-TO-END</span>
+    <span>정책·권한 설계</span><span>데이터 기반 의사결정</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><span class="idx">[01]</span> About</div>
+    <h2 class="section-title">운영 병목을<br>제품으로 바꿉니다</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p class="lead">
+        책상에서 정의한 요구사항과 현장에서 만져본 요구사항은 다릅니다.
+        그래서 저는 문제가 일어나는 현장으로 직접 들어갑니다.
+      </p>
+      <p>
+        식권 정산 오류를 잡으려 6일짜리 수기 정산을 처음부터 끝까지 손으로 돌려봤고,
+        총무팀의 병목을 짚으려 담당자의 하루를 그대로 따라다녔습니다.
+        국내 최초 역발행 승인 프로세스를 도입할 땐 위법 여지를 법무와 직접 검토했고,
+        보수적인 경영지원실을 설득할 땐 <strong>타사 사규를 비교 데이터로 만들어</strong>
+        규제를 완화시켰습니다.
+      </p>
+      <p>
+        그렇게 찾은 문제는 일회성 수정이 아니라 <strong>정책과 구조</strong>로 풉니다 —
+        하드코딩 대신 표준 정책으로, 직감 대신 KPI와 ROI로. 4년간 그 결과를
+        연간 8억 원 비용 절감과 2억 원 신규 매출, 그리고 특허 14건으로 남겼습니다.
+      </p>
+    </div>
+    <div class="fade-up">
+      <div class="skills-wrap">
+        <div>
+          <div class="skill-group-label">기획 · 설계</div>
+          <div class="skill-tags">
+            <span class="skill-tag">플랫폼 기획</span>
+            <span class="skill-tag">정책·권한 설계</span>
+            <span class="skill-tag">결제·정산 구조</span>
+            <span class="skill-tag">UX 설계</span>
+            <span class="skill-tag">MVP 정의</span>
+            <span class="skill-tag">요구사항 정의</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-label">분석 · 운영</div>
+          <div class="skill-tags">
+            <span class="skill-tag">KPI 설계</span>
+            <span class="skill-tag">데이터 기반 개선</span>
+            <span class="skill-tag">CAC/ROI 분석</span>
+            <span class="skill-tag">BEP 분석</span>
+            <span class="skill-tag">운영 도구 설계</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-label">협업 · 도구</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">JIRA</span>
+            <span class="skill-tag">Notion</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">Google Analytics</span>
+            <span class="skill-tag">Python</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-label">강점 도메인</div>
+          <div class="skill-tags">
+            <span class="skill-tag">B2B SaaS</span>
+            <span class="skill-tag">결제·핀테크</span>
+            <span class="skill-tag">스마트오피스 / IoT</span>
+            <span class="skill-tag">이해관계자 협업</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="principles">
+    <div class="principle fade-up">
+      <div class="principle-num">01</div>
+      <div class="principle-title">현장에서 출발한다</div>
+      <div class="principle-en">Start from the field</div>
+      <div class="principle-desc">
+        정산을 직접 돌려보고, 운영팀의 하루를 따라다니며 병목을 손으로 짚습니다.
+        가설이 아니라 경험에서 출발합니다.
+      </div>
+    </div>
+    <div class="principle fade-up">
+      <div class="principle-num">02</div>
+      <div class="principle-title">정책으로 확장한다</div>
+      <div class="principle-en">Design for scale</div>
+      <div class="principle-desc">
+        임시 하드코딩 대신 표준 정책을 설계해, 신규 도입마다 반복되던 비용을 구조적으로 없앱니다.
+      </div>
+    </div>
+    <div class="principle fade-up">
+      <div class="principle-num">03</div>
+      <div class="principle-title">숫자로 증명한다</div>
+      <div class="principle-en">Prove with metrics</div>
+      <div class="principle-desc">
+        모든 결정은 KPI로 가설을 세우고 ROI·NPS로 결과를 검증합니다.
+        제품의 가치는 비즈니스 임팩트로 말합니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><span class="idx">[02]</span> Projects</div>
+    <h2 class="section-title">핵심 프로젝트</h2>
+  </div>
+
+  <!-- PROJECT 1 -->
+  <div class="project-item" id="proj1">
+    <div class="project-header" onclick="toggleProject('proj1')">
+      <div class="project-num">01</div>
+      <div>
+        <div class="project-title">식권 서비스 — 기업 식권 결제·정산 플랫폼</div>
+        <div class="project-tags">
+          <span class="ptag red">신규 매출 2억</span>
+          <span class="ptag dark">2024.12 – 2025.07</span>
+        </div>
+      </div>
+      <div class="project-expand">+</div>
+    </div>
+    <div class="project-body">
+      <div class="project-body-inner">
+        <div class="project-body-pad">
+          <div class="project-summary">
+            수기 정산, 피크타임 혼잡, 고객사별로 파편화된 정책 — 세 가지 병목에 막혀
+            확장이 멈춰 있던 식권 서비스입니다. 과천 사옥 이전 TF에서 유사 서비스를 분석해
+            <strong>직접 제안</strong>한 프로젝트로, 사용부터 PG 결제·정산까지
+            <strong>전 과정을 재설계</strong>해 매출 성장과 운영 효율을 한 번에 끌어올렸습니다.
+          </div>
+
+          <div class="case-grid">
+            <div class="case-card">
+              <div class="case-card-label">🔴 Problem</div>
+              <div class="case-card-content">
+                식당마다 <strong>종이 수기 장부</strong>로 운영. 담당자가 엑셀로 타이핑해 정산하면
+                매번 5번씩 오류가 났습니다. 피크타임엔 주문·계산·적기가 한 카운터에서 뒤엉켜 혼잡이 극심했고,
+                고객사마다 한도·업종 제한·정산 방식이 달라 신규 도입 때마다 하드코딩으로 임시방편 처리하던 상황 —
+                도입 고객사는 <strong>자사 포함 3곳</strong>에 머물러 있었습니다.
+              </div>
+            </div>
+            <div class="case-card">
+              <div class="case-card-label">🟡 Decision</div>
+              <div class="case-card-content">
+                점진적 개선이 아닌 <strong>전면 재설계</strong>를 선택. 기존 시스템은 결제 완료 데이터만
+                다룰 수 있는 구조였기 때문입니다. 정책은 유지보수팀이 큰 고객사 요청만
+                <strong>하드코딩으로 땜질</strong>하던 상황 — 미처리로 인한 고객사 이탈과 영업 실주
+                피드백이 누적돼, 경우의 수를 <strong>처음부터 재설계</strong>하기로 결정했습니다.
+              </div>
+            </div>
+            <div class="case-card">
+              <div class="case-card-label">🟢 Insight</div>
+              <div class="case-card-content">
+                타사 식권 레퍼런스와 <strong>BGF 포스 협의</strong>에서 PG 연동 개인 추가 결제
+                아이디어를 도출. <strong>토스·헥토의 API 문서를 직접 분석</strong>해 결제 구조를 설계하고,
+                더존 역발행 API로 <strong>국내 최초</strong> 역발행 승인 프로세스를 구현했습니다.
+                1만 명 이상 고객사만 커스터마이징, 나머지는 스탠다드로 정책 표준화 기준을 수립.
+              </div>
+            </div>
+          </div>
+
+          <div class="figure">
+            <div class="figure-head"><span class="tag">[ DECISION LOGIC ]</span> 왜 결제 → UX → 정산 순서였나</div>
+            <div class="figure-body">
+              <div class="figure-scroll">
+              <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans CJK KR',sans-serif">
+                <defs>
+                  <marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                    <path d="M0,0 L7,3 L0,6 Z" fill="#FF3B00"/>
+                  </marker>
+                </defs>
+                <rect x="20" y="78" width="190" height="92" fill="#0C0B0A"/>
+                <rect x="20" y="78" width="190" height="4" fill="#FF3B00"/>
+                <text x="40" y="108" fill="#FF3B00" font-size="11" font-family="'DM Mono',monospace" letter-spacing="1">PRIORITY 01</text>
+                <text x="40" y="132" fill="#F2EEE4" font-size="19" font-weight="700">결제 (PG 연동)</text>
+                <text x="40" y="154" fill="#8C887E" font-size="11.5">결제가 풀려야 그 위 모든 게 가능</text>
+                <rect x="265" y="78" width="190" height="92" fill="#161513"/>
+                <rect x="265" y="78" width="190" height="4" fill="#FF3B00" opacity="0.55"/>
+                <text x="285" y="108" fill="#FF3B00" font-size="11" font-family="'DM Mono',monospace" letter-spacing="1" opacity="0.8">PRIORITY 02</text>
+                <text x="285" y="132" fill="#F2EEE4" font-size="19" font-weight="700">사용 UX</text>
+                <text x="285" y="154" fill="#8C887E" font-size="11.5">결제 위에서 임직원 경험 설계</text>
+                <rect x="510" y="78" width="190" height="92" fill="#201E1B"/>
+                <rect x="510" y="78" width="190" height="4" fill="#FF3B00" opacity="0.3"/>
+                <text x="530" y="108" fill="#FF3B00" font-size="11" font-family="'DM Mono',monospace" letter-spacing="1" opacity="0.6">PRIORITY 03</text>
+                <text x="530" y="132" fill="#F2EEE4" font-size="19" font-weight="700">정산 구조</text>
+                <text x="530" y="154" fill="#8C887E" font-size="11.5">재무그룹과 풀 이해관계 — 후행</text>
+                <line x1="216" y1="124" x2="259" y2="124" stroke="#FF3B00" stroke-width="2" marker-end="url(#ar1)"/>
+                <line x1="461" y1="124" x2="504" y2="124" stroke="#FF3B00" stroke-width="2" marker-end="url(#ar1)"/>
+                <text x="20" y="42" fill="#0C0B0A" font-size="13" font-weight="700">의존성 기준으로 순서를 고정 — 거꾸로 가면 앞 단계가 뒤 단계를 막는다</text>
+                <line x1="20" y1="52" x2="700" y2="52" stroke="#CFC9BA" stroke-width="1"/>
+                <text x="20" y="218" fill="#6E6A60" font-size="11.5" font-family="'DM Mono',monospace">RISK</text>
+                <text x="20" y="240" fill="#2A2823" font-size="12.5">정산을 먼저 손대면 결제 데이터 구조가 안 잡혀 다시 엎어야 함 —</text>
+                <text x="20" y="260" fill="#2A2823" font-size="12.5">그래서 가장 이해관계가 복잡한 정산을 의도적으로 마지막에 배치했다.</text>
+              </svg>
+              </div>
+            </div>
+            <div class="figure-cap">
+              <strong>판단의 근거:</strong> 우선순위를 난이도나 요청 순서가 아니라
+              <strong>기능 간 의존성</strong>으로 결정했습니다. 결제 구조가 정해져야 UX와 정산이
+              그 위에 설 수 있기 때문에, 가장 까다로운 정산을 일부러 후행으로 두었습니다.
+            </div>
+          </div>
+
+          <div class="hypo">
+            <div class="hypo-cell assume">
+              <div class="hypo-label"><span class="pin">◆</span> Hypothesis · 세운 가설</div>
+              <div class="hypo-text">
+                식권 도입 식당의 <strong>식대가 오르고</strong>, 고객사들이 일 2~3천 원을
+                쿠폰처럼 추가 지급하기 시작한 흐름을 포착. "임직원이 지원금을 초과해 쓰는
+                구간에 <strong>PG 추가 결제를 붙이면 수수료를 매출로 전환</strong>할 수 있다"는
+                가설을 세웠습니다.
+              </div>
+            </div>
+            <div class="hypo-cell verify">
+              <div class="hypo-label"><span class="pin">◆</span> Validation · 검증한 근거</div>
+              <div class="hypo-text">
+                매출 상위가 아닌 <strong>방문자 수가 많은 식당</strong>의 데이터를 분석 —
+                결제 건수는 많은데 식권 사용액이 낮은 식당이 다수 확인됐습니다.
+                "초과 결제 수요가 실재한다"를 데이터로 확인한 뒤 PG 연동을 결정,
+                출시 후 <strong>약 2개월간 결제 금액 추이</strong>를 추적해 가설을 검증했습니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="deepdive">
+            <div class="deepdive-head"><span class="tag">[ DESIGN DEEP DIVE ]</span> 가장 까다로웠던 정책</div>
+            <div class="deepdive-body">
+              <h4>당겨쓰기 — 내일의 식권을 오늘 쓰는 기능</h4>
+              <p>
+                식권 정책 중 설계가 가장 어려웠던 건 <strong>'당겨쓰기'</strong>였습니다.
+                임직원이 다음 날 식권을 미리 끌어다 쓰는 기능으로, 월 사용 가능 횟수,
+                당겨쓴 금액의 회수 방식, 정산 시점의 처리까지 모든 경우의 수가 맞물려 있었습니다.
+                편의 기능 하나가 정산 구조 전체를 흔들 수 있는 만큼, 한도·횟수·회수 로직을
+                <strong>별도 정책으로 분리</strong>해 결제와 정산 어디서도 깨지지 않도록 설계했습니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="outcomes">
+            <div class="outcomes-title">핵심 성과</div>
+
+            <div class="ba-block">
+              <div class="ba-title">Before / After</div>
+              <div class="ba-grid">
+                <div class="ba-row">
+                  <div class="ba-label">정산 처리</div>
+                  <div class="ba-bars">
+                    <div class="ba-bar before"><span class="ba-tag">Before</span><div class="ba-track" style="width:90%">2인 · 6일</div></div>
+                    <div class="ba-bar after"><span class="ba-tag">After</span><div class="ba-track" style="width:33%">1인 · 2일</div><span class="ba-delta">-83%</span></div>
+                  </div>
+                </div>
+                <div class="ba-row">
+                  <div class="ba-label">정책 경우의 수</div>
+                  <div class="ba-bars">
+                    <div class="ba-bar before"><span class="ba-tag">Before</span><div class="ba-track" style="width:22%">70개</div></div>
+                    <div class="ba-bar after"><span class="ba-tag">After</span><div class="ba-track" style="width:90%">320개</div><span class="ba-delta">4.6x</span></div>
+                  </div>
+                </div>
+                <div class="ba-row">
+                  <div class="ba-label">도입 고객사</div>
+                  <div class="ba-bars">
+                    <div class="ba-bar before"><span class="ba-tag">Before</span><div class="ba-track" style="width:35%">자사 포함 3곳</div></div>
+                    <div class="ba-bar after"><span class="ba-tag">After</span><div class="ba-track" style="width:90%">7개사 · 약 2만 명</div><span class="ba-delta">+30%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="outcome-list">
+              <div class="outcome-item highlight">
+                <div class="outcome-num">2억</div>
+                <div class="outcome-text"><strong>PG 연동 개인 추가 결제 로직 설계로 연간 신규 매출 창출</strong><br>세금계산서 발행 기준으로 측정</div>
+              </div>
+              <div class="outcome-item highlight">
+                <div class="outcome-num">83%</div>
+                <div class="outcome-text"><strong>정산 처리 시간 단축</strong> — 2인 6일 → 1인 2일<br>더존 협력 <strong>국내 최초</strong> 역발행 승인 프로세스 도입 · 정산 자동화 특허 출원</div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-num">30%</div>
+                <div class="outcome-text"><strong>신규 고객사 도입률 증가</strong><br>정책 경우의 수 70개 → 320개 재설계 후, 영업 단계 기능 미충족 실주 해소</div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-num">60%</div>
+                <div class="outcome-text"><strong>피크타임 결제 혼잡도 감소</strong><br>식권 합산 결제 기획으로 카운터 병목 해소</div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-num">70%</div>
+                <div class="outcome-text"><strong>NPS 기반 고객 만족도 달성</strong><br>안정화 종료 후 7개사 약 2만 명 전수 대상, 설문폼 직접 설계·배포</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="retro">
+            <div class="retro-label">RETROSPECTIVE</div>
+            <div class="retro-text">
+              역발행 승인 프로세스 도입 시 위법 여지에 대한 법적 검토, 경영지원실의 보수적 문화를
+              설득한 과정, 출시 직후 데이터 마이그레이션 이슈를 직접 수습한 경험이
+              이후 이해관계자 협업과 제품 안정화의 단단한 기반이 됐습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project-item" id="proj2">
+    <div class="project-header" onclick="toggleProject('proj2')">
+      <div class="project-num">02</div>
+      <div>
+        <div class="project-title">총무타임 — B2B 스마트오피스 통합 플랫폼</div>
+        <div class="project-tags">
+          <span class="ptag blue">침투율 95%</span>
+          <span class="ptag dark">2024.02 – 2024.11</span>
+        </div>
+      </div>
+      <div class="project-expand">+</div>
+    </div>
+    <div class="project-body">
+      <div class="project-body-inner">
+        <div class="project-body-pad">
+          <div class="project-summary">
+            2015년산 레거시 웹으로 분산 운영되던 8개 업무 시스템을 단일 스마트오피스 앱으로 통합했습니다.
+            임직원·총무팀·관리자 전 사용자를 아우르는 <strong>E2E 플랫폼</strong>을 기획·설계·출시 —
+            사옥 이전 1개월 내 임직원 침투율 95%를 달성했습니다.
+          </div>
+
+          <div class="case-grid">
+            <div class="case-card">
+              <div class="case-card-label">🔴 Problem</div>
+              <div class="case-card-content">
+                회의실·법인차량은 <strong>2015년산 웹</strong>으로 예약하고, 문제가 생기면 총무 담당자에게
+                직접 전화해야 했습니다. 총무팀은 하루 8시간을 수기 업무에 쏟으며 임직원 연락에 치여
+                정작 핵심 업무에 집중하지 못했고, 특정 부서의 회의실 독점 문제까지 복합적으로 얽혀 있었습니다.
+              </div>
+            </div>
+            <div class="case-card">
+              <div class="case-card-label">🟡 Decision</div>
+              <div class="case-card-content">
+                대표의 비전인 <strong>'스마트한 사옥'</strong>을 제품으로 구현. 초기 범위에는
+                AI 문방구·MRO몰까지 있었지만, 이전 직후 임직원이 반드시 써야 할
+                <strong>핵심 8개</strong>로 범위를 좁혔습니다. 출입보안·헬프데스크를 1순위로 두되,
+                8개 기능을 순차가 아닌 동시 완성 목표로 — 이전 시점에 임직원이 모든 기능을
+                한 앱에서 쓸 수 있어야 했기 때문.
+              </div>
+            </div>
+            <div class="case-card">
+              <div class="case-card-label">🟢 Insight</div>
+              <div class="case-card-content">
+                흩어진 8개 시스템을 <strong>'플랫폼 관점'</strong>에서 재설계. 핵심은 재실 감지 센서·QR 출입 등
+                AIoT를 업무 흐름에 자연스럽게 녹여내는 것이었습니다. 권한 체계는 사내 규정 인터뷰를 거쳐
+                <strong>부서관리자·총무관리자·플랫폼관리자 3단 구조</strong>로 설계해,
+                특정 부서의 회의실 독점 같은 이해 충돌까지 정책으로 흡수했습니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="hypo">
+            <div class="hypo-cell assume">
+              <div class="hypo-label"><span class="pin">◆</span> Hypothesis · 세운 가설</div>
+              <div class="hypo-text">
+                "부서들이 <strong>회의 시점을 몰라 오전·오후·종일 단위로 통예약</strong>하면서
+                회의실이 장부상으로만 차 있다 — 실사용 기준으로 점유를 풀어주면 유휴를 회수할 수 있다"는
+                가설을 세웠습니다.
+              </div>
+            </div>
+            <div class="hypo-cell verify">
+              <div class="hypo-label"><span class="pin">◆</span> Validation · 검증한 근거</div>
+              <div class="hypo-text">
+                2015년산 레거시 예약앱의 <strong>예약 내역·시간 데이터</strong>를 분석해 통예약 패턴을
+                확인하고, 해당 회의실을 <strong>직접 현장 확인</strong>한 결과 실제 회의가 없는 경우가
+                다수였습니다. "장부 점유 ≠ 실사용"을 검증한 뒤 AIoT 재실 감지 기반 자동 취소 로직을 설계.
+              </div>
+            </div>
+          </div>
+
+          <div class="deepdive">
+            <div class="deepdive-head"><span class="tag">[ DESIGN DEEP DIVE ]</span> 예약 로직 설계</div>
+            <div class="deepdive-body">
+              <h4>차량과 회의실은 다르게 움직인다</h4>
+              <p>
+                같은 '예약'이라도 자산 특성에 따라 로직을 다르게 설계했습니다.
+                <strong>법인차량</strong>은 출발·도착 거리를 필수로 기입하게 하고, 6시간 예약 후
+                4시간 만에 운행이 끝나면 남은 2시간을 자동으로 예약 가능 상태로 되돌립니다.
+                동승자 입력 기능으로 동승자도 운행일지를 쓸 수 있게 했고, 예약 시간이 지나면
+                임의 취소를 막았습니다. <strong>회의실</strong>은 반대로 사용 중에도 취소를 허용하되,
+                예약 후 30분간 재실 센서에 감지가 없으면 자동 취소하고, 미예약 상태로 점유 중이면
+                안내 메시지로 다른 회의실 사용을 유도합니다. 자산을 <strong>'놀지 않게'</strong>
+                만드는 데 초점을 둔 설계입니다.
+              </p>
+
+              <div class="figure-scroll">
+              <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans CJK KR',sans-serif" style="margin-top:20px">
+                <defs>
+                  <marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                    <path d="M0,0 L7,3 L0,6 Z" fill="#1A3CFF"/>
+                  </marker>
+                </defs>
+                <!-- root -->
+                <rect x="285" y="14" width="150" height="46" fill="#0C0B0A"/>
+                <text x="360" y="42" fill="#F2EEE4" font-size="14" font-weight="700" text-anchor="middle">예약 요청</text>
+                <line x1="360" y1="60" x2="360" y2="78" stroke="#1A3CFF" stroke-width="1.5"/>
+                <line x1="170" y1="78" x2="550" y2="78" stroke="#1A3CFF" stroke-width="1.5"/>
+                <line x1="170" y1="78" x2="170" y2="96" stroke="#1A3CFF" stroke-width="1.5" marker-end="url(#ar2)"/>
+                <line x1="550" y1="78" x2="550" y2="96" stroke="#1A3CFF" stroke-width="1.5" marker-end="url(#ar2)"/>
+                <!-- 차량 -->
+                <rect x="40" y="100" width="280" height="44" fill="#1A3CFF"/>
+                <text x="58" y="127" fill="#fff" font-size="14" font-weight="700">법인차량 — 정확성 우선</text>
+                <rect x="40" y="150" width="280" height="150" fill="#FBFAF6" stroke="#CFC9BA" stroke-width="1"/>
+                <text x="58" y="178" fill="#2A2823" font-size="12">· 출발·도착 거리 필수 입력</text>
+                <text x="58" y="202" fill="#2A2823" font-size="12">· 6h 예약 후 4h 운행 종료 시</text>
+                <text x="68" y="222" fill="#6E6A60" font-size="11.5">→ 남은 2h 자동 반납</text>
+                <text x="58" y="246" fill="#2A2823" font-size="12">· 동승자도 운행일지 작성 가능</text>
+                <text x="58" y="270" fill="#2A2823" font-size="12">· 예약 시간 경과 후 임의 취소 차단</text>
+                <!-- 회의실 -->
+                <rect x="400" y="100" width="280" height="44" fill="#1A3CFF"/>
+                <text x="418" y="127" fill="#fff" font-size="14" font-weight="700">회의실 — 회전율 우선</text>
+                <rect x="400" y="150" width="280" height="150" fill="#FBFAF6" stroke="#CFC9BA" stroke-width="1"/>
+                <text x="418" y="178" fill="#2A2823" font-size="12">· 사용 중에도 취소 허용</text>
+                <text x="418" y="202" fill="#2A2823" font-size="12">· 예약 후 30분간 재실 미감지 시</text>
+                <text x="428" y="222" fill="#6E6A60" font-size="11.5">→ AIoT 자동 취소</text>
+                <text x="418" y="246" fill="#2A2823" font-size="12">· 미예약 점유 중이면 안내 메시지로</text>
+                <text x="428" y="266" fill="#6E6A60" font-size="11.5">→ 다른 회의실 사용 유도</text>
+              </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="outcomes">
+            <div class="outcomes-title">핵심 성과</div>
+
+            <div class="ba-block">
+              <div class="ba-title">Before / After</div>
+              <div class="ba-grid">
+                <div class="ba-row">
+                  <div class="ba-label">총무팀 일일 운영</div>
+                  <div class="ba-bars">
+                    <div class="ba-bar before"><span class="ba-tag">Before</span><div class="ba-track" style="width:90%">하루 8시간 · 수기</div></div>
+                    <div class="ba-bar after blue"><span class="ba-tag">After</span><div class="ba-track" style="width:25%">2시간</div><span class="ba-delta blue">-75%</span></div>
+                  </div>
+                </div>
+                <div class="ba-row">
+                  <div class="ba-label">회의실 유휴 시간</div>
+                  <div class="ba-bars">
+                    <div class="ba-bar before"><span class="ba-tag">Before</span><div class="ba-track" style="width:90%">통예약 다수 · 빈 회의실</div></div>
+                    <div class="ba-bar after blue"><span class="ba-tag">After</span><div class="ba-track" style="width:70%">AIoT 자동 회수</div><span class="ba-delta blue">-30%</span></div>
+                  </div>
+                </div>
+                <div class="ba-row">
+                  <div class="ba-label">임직원 앱 침투율</div>
+                  <div class="ba-bars">
+                    <div class="ba-bar before"><span class="ba-tag">Before</span><div class="ba-track" style="width:8%">0%</div></div>
+                    <div class="ba-bar after blue"><span class="ba-tag">After</span><div class="ba-track" style="width:95%">이전 1개월 내 95%</div><span class="ba-delta blue">95%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="outcome-list">
+              <div class="outcome-item highlight">
+                <div class="outcome-num">95%</div>
+                <div class="outcome-text"><strong>사옥 이전 1개월 내 임직원 앱 침투율</strong><br>임직원 수 대비 다운로드율 기준 측정</div>
+              </div>
+              <div class="outcome-item highlight">
+                <div class="outcome-num">75%</div>
+                <div class="outcome-text"><strong>총무팀 운영 리소스 절감</strong> — 일 8시간 → 2시간<br>도입 전·후·안정화 후 3회 담당자 업무시간 측정</div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-num">30%</div>
+                <div class="outcome-text"><strong>회의실 유휴 시간 감소</strong><br>AIoT 재실 감지 연동 자동 취소 로직</div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-num">16%</div>
+                <div class="outcome-text"><strong>법인차량 리스 비용 절감</strong> — 연간 1,500만 원<br>실 리스 비용·차량별 운행 데이터 분석 → 유휴 차량 매각</div>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-num">5개사</div>
+                <div class="outcome-text"><strong>외부 영업 성과 확보 · 특허 출원 8건</strong><br>출입보안·회의실·공간 설계 등 — 직접 브리핑·정책 세팅·BEP 분석 주도</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="retro blue">
+            <div class="retro-label">RETROSPECTIVE</div>
+            <div class="retro-text">
+              공사 현장이 실시간으로 바뀌는 환경에서 기획·설계를 동시에 진행하며 불확실성을 다루는
+              근육이 생겼습니다. 출시 직후 사옥 외 근무 임직원의 로그인이 저조한 이슈를 겪으며,
+              침투율은 출시가 아니라 출시 이후의 관리에서 완성된다는 걸 배웠습니다.
+              사규를 근거로 반대하는 이해관계자를 설득할 때, 타 기업 사규를 비교 데이터로 제시해
+              규제를 완화시킨 경험이 가장 기억에 남고, 라즈베리파이 통신부터 소켓 연동까지
+              AIoT 기술 검토를 직접 하며 기술적 맥락을 읽는 역량도 크게 성장했습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top: 2px solid var(--black);"></div>
+</section>
+
+<!-- OTHER WORK -->
+<section id="other">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><span class="idx">[03]</span> Other Work</div>
+    <h2 class="section-title">그 외 담당 영역</h2>
+  </div>
+  <p class="builds-intro fade-up" style="color:var(--ink);max-width:760px;margin:-40px 0 46px;">
+    핵심 프로젝트 외에도 채용 시스템·전사 IT 전략·개인 프로덕트까지,
+    도메인을 넘나들며 <strong>문제 정의부터 성과 검증</strong>까지 직접 담당했습니다.
+  </p>
+  <div class="other-grid">
+    <div class="other-card fade-up">
+      <div class="other-meta"><span>이트너스(주)</span><span>SaaS</span></div>
+      <div class="other-title">ATS 채용 시스템</div>
+      <div class="other-desc">
+        공고·지원자·면접·평가로 이어지는 채용 파이프라인을 하나로 잇는
+        사내 ATS를 Product Owner로서 기획·설계. 운영팀 불합격 사유 데이터에서
+        <strong>면접 이탈의 최다 원인이 일정 조율</strong>임을 확인하고
+        후보자 자가 선택형 일정 UX를 설계 — 안정화 전후 공채 5개씩을 비교해
+        면접 포기율 70% 감소를 확인했습니다.
+      </div>
+      <button type="button" class="other-more" onclick="toggleMore(this)">성과 자세히 보기</button>
+      <div class="other-extra"><div class="other-extra-inner">
+        <div class="other-meta" style="margin-bottom:14px"><span>2023.04 – 2024.01</span><span>PRODUCT OWNER</span></div>
+        <h5>주요 역할</h5>
+        <ul>
+          <li>공고 → 서류 → 면접 → 합격 → 온보딩 전 과정 ATS 구조화 기획</li>
+          <li>후보자 자율 선택형 면접 일정 UX 설계</li>
+          <li>채용 퍼널·CAC 데이터 분석으로 병목 지점 도출·개선</li>
+        </ul>
+        <h5>핵심 성과</h5>
+        <ul>
+          <li>인사팀 운영 공수 <strong>80% 절감</strong> (전 과정 ATS 통합)</li>
+          <li>면접 이탈률 <strong>70% 감소</strong> (자가 선택형 일정 UX)</li>
+          <li>1인당 채용 비용 <strong>30% 절감</strong> (퍼널·CAC 분석 기반 개선)</li>
+          <li>수기 기반 평가 시스템화 → 수기 오류 <strong>5% 미만</strong></li>
+        </ul>
+      </div></div>
+    </div>
+    <div class="other-card fade-up">
+      <div class="other-meta"><span>이트너스(주)</span><span>STRATEGY</span></div>
+      <div class="other-title">전사 IT 포트폴리오 ROI 전략</div>
+      <div class="other-desc">
+        전사 IT 시스템을 ROI 기준으로 재편하는 전략을 수립.
+        중복·저효율 시스템을 정리하고 투자 우선순위 판단 기준을 마련해,
+        서버·보안 유지비와 인력 리소스 재분배 기준 <strong>연간 8억 원의
+        실집행 비용 절감</strong>으로 이어졌습니다.
+      </div>
+      <button type="button" class="other-more" onclick="toggleMore(this)">성과 자세히 보기</button>
+      <div class="other-extra"><div class="other-extra-inner">
+        <div class="other-meta" style="margin-bottom:14px"><span>2022.10 – 2023.03</span><span>STRATEGY</span></div>
+        <h5>주요 역할</h5>
+        <ul>
+          <li>MAU·로그인율·비즈니스 기여도 기반 ROI 평가 모델 설계</li>
+          <li>Make vs Buy 프레임워크 수립으로 IT 투자 심의 기준 정립</li>
+          <li>성과 등급제(S~D) 및 Product Lifecycle 기준 수립</li>
+        </ul>
+        <h5>핵심 성과</h5>
+        <ul>
+          <li>연간 <strong>8억 원</strong> IT 운영비 절감 (ROI 모델 기반 의사결정)</li>
+          <li>신규 과제 70% 외주 전환 → 핵심 제품 집중도 <strong>30% 향상</strong></li>
+          <li>저효율 솔루션 10개 종료·통합 (제품군 <strong>11% 슬림화</strong>)</li>
+          <li>개발 심의회 프로세스 <strong>최초 확립</strong></li>
+        </ul>
+      </div></div>
+    </div>
+    <div class="other-card fade-up">
+      <div class="other-meta"><span>개인 프로젝트</span><span>2021</span></div>
+      <div class="other-title">WYF — 감정 분석 음악 추천</div>
+      <div class="other-desc">
+        대학 재학 중 감정 분석 기반 음악 추천 서비스를 직접 기획·출시해
+        2개월간 상용 운영. 제품 기획자로의 전환점이 된 첫 프로덕트입니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDS -->
+<section id="builds">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><span class="idx">[04]</span> Builds</div>
+    <h2 class="section-title">직접 만든 것</h2>
+  </div>
+  <p class="builds-intro fade-up">
+    기획만 하는 PO가 아니라, <strong>문제를 정의하고 가설을 세워 직접 만들어 검증하는 PO</strong>가
+    되고자 합니다. 아래는 업무 현장의 병목을 직접 코드로 푼 결과물입니다 —
+    문제 정의 · 시스템 설계 · DB 설계 · 검증 · 구현까지 직접 수행했습니다.
+  </p>
+
+  <div class="build-card fade-up">
+    <div class="build-head">
+      <div>
+        <div class="build-kicker">[ 01 ] AI 기반 업무 자동화 시스템</div>
+        <div class="build-name">나라장터 조달 공고 자동 분석 대시보드</div>
+      </div>
+      <div class="build-stack">
+        <span>React · TypeScript</span>
+        <span>Flask</span>
+        <span>PostgreSQL</span>
+        <span>LLM API</span>
+        <span>직접 호스팅</span>
+      </div>
+    </div>
+
+    <div class="build-prob">
+      <div class="build-prob-cell">
+        <div class="build-prob-label">🔴 Problem</div>
+        <div class="build-prob-text">
+          B2B 사업이 중견 규모로 커지며 나라장터 공고 검토가 핵심 업무가 됐지만,
+          <strong>각 사업부 담당자가 매일 직접 공고를 확인</strong>해야 했습니다.
+          기존 크롤링은 제목만 가져와 상세·자격조건은 결국 사람이 다시 읽어야 했고,
+          공고 1건당 PDF 첨부와 면허·지역 제한까지 봐야 해
+          <strong>오전 4시간이 공고 검토에 소모</strong>됐습니다.
+        </div>
+      </div>
+      <div class="build-prob-cell result">
+        <div class="build-prob-label">🟢 Approach</div>
+        <div class="build-prob-text">
+          "공고를 <strong>회사 기준으로 점수화</strong>해 1차로 거르고, 가능성 높은 건만
+          LLM으로 정밀 분석하면 사람은 최종 판단만 하면 된다"는 가설.
+          룰 엔진으로 흔들림을 잡고 LLM으로 요약·리스크를 보완하는
+          <strong>2단 구조</strong>로 설계해, 사람을 대체하지 않고 검토 속도를 끌어올렸습니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="figure" style="margin:0;border-color:#2C2A26;background:#161513">
+      <div class="figure-head" style="background:#0C0B0A">
+        <span class="tag">[ PIPELINE ]</span> 수집부터 입찰 판단까지 — 6단계 데이터 파이프라인
+      </div>
+      <div class="figure-body" style="padding:32px 26px">
+        <div class="figure-scroll">
+        <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans CJK KR',sans-serif">
+          <defs>
+            <marker id="ar3" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L7,3 L0,6 Z" fill="#FF3B00"/>
+            </marker>
+          </defs>
+          <!-- gate label (위쪽 중앙 정렬, 박스 03~04 중앙) -->
+          <text x="368" y="18" fill="#FF8A66" font-size="10.5" font-family="'DM Mono',monospace" text-anchor="middle" dominant-baseline="middle">— 80점 이상만 LLM 단계로 통과 (스코어 게이트) —</text>
+          <line x1="258" y1="26" x2="478" y2="26" stroke="#FF3B00" stroke-width="0.8" stroke-dasharray="3 3"/>
+          <!-- nodes: rect y=36 height=68 → center=70. 3줄: 번호y=55, 타이틀y=71, 서브y=87 -->
+          <g>
+            <rect x="14" y="36" width="98" height="68" rx="2" fill="#201E1B" stroke="#3A3833" stroke-width="1"/>
+            <text x="63" y="55" fill="#FF3B00" font-size="9" font-family="'DM Mono',monospace" text-anchor="middle">01</text>
+            <text x="63" y="71" fill="#F2EEE4" font-size="12" font-weight="700" text-anchor="middle">수집</text>
+            <text x="63" y="87" fill="#8C887E" font-size="8.5" text-anchor="middle">나라장터 API</text>
+          </g>
+          <g>
+            <rect x="136" y="36" width="98" height="68" rx="2" fill="#201E1B" stroke="#3A3833" stroke-width="1"/>
+            <text x="185" y="55" fill="#FF3B00" font-size="9" font-family="'DM Mono',monospace" text-anchor="middle">02</text>
+            <text x="185" y="71" fill="#F2EEE4" font-size="12" font-weight="700" text-anchor="middle">정규화·파싱</text>
+            <text x="185" y="87" fill="#8C887E" font-size="8.5" text-anchor="middle">PDF 본문 추출</text>
+          </g>
+          <g>
+            <rect x="258" y="36" width="98" height="68" rx="2" fill="#2A1A12" stroke="#FF3B00" stroke-width="1.3"/>
+            <text x="307" y="55" fill="#FF3B00" font-size="9" font-family="'DM Mono',monospace" text-anchor="middle">03</text>
+            <text x="307" y="71" fill="#F2EEE4" font-size="12" font-weight="700" text-anchor="middle">룰 매칭</text>
+            <text x="307" y="87" fill="#FF8A66" font-size="8.5" text-anchor="middle">사업군 점수화</text>
+          </g>
+          <g>
+            <rect x="380" y="36" width="98" height="68" rx="2" fill="#2A1A12" stroke="#FF3B00" stroke-width="1.3"/>
+            <text x="429" y="55" fill="#FF3B00" font-size="9" font-family="'DM Mono',monospace" text-anchor="middle">04</text>
+            <text x="429" y="71" fill="#F2EEE4" font-size="12" font-weight="700" text-anchor="middle">LLM 분석</text>
+            <text x="429" y="87" fill="#FF8A66" font-size="8.5" text-anchor="middle">요약·리스크</text>
+          </g>
+          <g>
+            <rect x="502" y="36" width="98" height="68" rx="2" fill="#201E1B" stroke="#3A3833" stroke-width="1"/>
+            <text x="551" y="55" fill="#FF3B00" font-size="9" font-family="'DM Mono',monospace" text-anchor="middle">05</text>
+            <text x="551" y="71" fill="#F2EEE4" font-size="12" font-weight="700" text-anchor="middle">입찰가 추천</text>
+            <text x="551" y="87" fill="#8C887E" font-size="8.5" text-anchor="middle">3년 낙찰 데이터</text>
+          </g>
+          <g>
+            <rect x="624" y="36" width="82" height="68" rx="2" fill="#201E1B" stroke="#3A3833" stroke-width="1"/>
+            <text x="665" y="55" fill="#FF3B00" font-size="9" font-family="'DM Mono',monospace" text-anchor="middle">06</text>
+            <text x="665" y="71" fill="#F2EEE4" font-size="12" font-weight="700" text-anchor="middle">대시보드</text>
+            <text x="665" y="87" fill="#8C887E" font-size="8.5" text-anchor="middle">사람이 최종 판단</text>
+          </g>
+          <!-- arrows -->
+          <line x1="112" y1="70" x2="134" y2="70" stroke="#FF3B00" stroke-width="1.6" marker-end="url(#ar3)"/>
+          <line x1="234" y1="70" x2="256" y2="70" stroke="#FF3B00" stroke-width="1.6" marker-end="url(#ar3)"/>
+          <line x1="356" y1="70" x2="378" y2="70" stroke="#FF3B00" stroke-width="1.6" marker-end="url(#ar3)"/>
+          <line x1="478" y1="70" x2="500" y2="70" stroke="#FF3B00" stroke-width="1.6" marker-end="url(#ar3)"/>
+          <line x1="600" y1="70" x2="622" y2="70" stroke="#FF3B00" stroke-width="1.6" marker-end="url(#ar3)"/>
+          <!-- two-stage note: rect y=150 height=76 → center=188. 3줄: 168/186/204 -->
+          <rect x="14" y="150" width="692" height="76" fill="#0C0B0A" stroke="#2C2A26" stroke-width="1"/>
+          <text x="34" y="168" fill="#FF3B00" font-size="10" font-family="'DM Mono',monospace" letter-spacing="1">왜 2단 구조인가</text>
+          <text x="34" y="186" fill="#B5B1A6" font-size="11.5">룰 엔진이 회사 기준으로 1차 필터링해 LLM 호출량과 판단 흔들림을 줄이고,</text>
+          <text x="34" y="204" fill="#B5B1A6" font-size="11.5">LLM은 통과한 공고의 요약·리스크만 보완 — 사람을 대체하지 않고 검토 속도를 끌어올리는 구조.</text>
+        </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-metrics">
+      <div class="build-metric">
+        <div class="build-metric-n">4h→30m</div>
+        <div class="build-metric-l"><strong>담당자 공고 검토 시간</strong><br>오전 4시간 소모 → 30분 내 전체 파악 (사용 인터뷰)</div>
+      </div>
+      <div class="build-metric">
+        <div class="build-metric-n">전 사업부</div>
+        <div class="build-metric-l"><strong>실사용·검증</strong><br>각 사업부 담당자가 실제 사용, 인터뷰 기준 높은 만족도</div>
+      </div>
+      <div class="build-metric">
+        <div class="build-metric-n">E2E</div>
+        <div class="build-metric-l"><strong>직접 수행 범위</strong><br>문제 정의 · 아키텍처 · DB 설계 · 구현 · 호스팅</div>
+      </div>
+    </div>
+
+    <div class="build-note">
+      <strong>설계 관점.</strong> 단순 대시보드가 아니라 수집 → 정규화 → 보강 → 매칭 → 분석 → 알림으로
+      이어지는 <strong>데이터 파이프라인</strong>으로 설계해 단계별 실패 추적과 기능 확장을 쉽게 했고,
+      JWT 인증과 3단 권한(user · middle_admin · super_admin)으로 운영 안전성까지 확보했습니다.
+      낙찰 확률 예측은 데이터가 더 쌓인 뒤로 의도적으로 미뤄둔, 다음 단계 과제입니다.
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><span class="idx">[05]</span> Experience</div>
+    <h2 class="section-title">경력 & 이력</h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item fade-up">
+      <div class="exp-period">2022.10 — 재직 중<br><br><strong>3년 8개월</strong></div>
+      <div>
+        <div class="exp-company">이트너스(주)</div>
+        <div class="exp-role">기업부설연구소 → 전략그룹</div>
+        <div class="exp-desc">
+          복잡한 B2B 플랫폼에서 제품을 End-to-End로 책임진 뒤, 거기서 검증한 판단 기준을
+          전사 전략 단위로 확장해 왔습니다. 제품·전략을 가리지 않고 문제를 구조로 푸는 데 강점이 있습니다.
+        </div>
+        <div class="exp-track">
+          <div class="exp-step">
+            <div class="exp-step-period">2022.10 – 2025.11</div>
+            <div class="exp-step-role">기업부설연구소 · PM / PO</div>
+            <div class="exp-step-desc">식권·스마트오피스·ATS·전사 ROI까지 4개 도메인의 제품 기획·설계·출시·운영을 주도.</div>
+          </div>
+          <div class="exp-step">
+            <div class="exp-step-period">2025.12 – 현재</div>
+            <div class="exp-step-role">전략그룹 · 전략기획</div>
+            <div class="exp-step-desc">제품에서 만든 ROI·우선순위 판단 기준을 전사 투자·포트폴리오 의사결정으로 확장.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-period">2018.02 — 2022.02</div>
+      <div>
+        <div class="exp-company">서울한영대학교</div>
+        <div class="exp-role">사회복지학과 졸업</div>
+        <div class="exp-desc">
+          재학 중 감정 분석 기반 음악 추천 서비스(WYF)를 기획·출시해 2개월간 상용 운영했습니다.
+          모두콘 컨퍼런스 연사로 참여했고, 이 경험이 제품 기획자로의 전환점이 됐습니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recognition">
+    <div class="rec-item fade-up">
+      <div class="rec-num">14건</div>
+      <div class="rec-text"><strong>특허 출원 14건</strong><br>출입보안 · 회의실 · 식권 정산 · 의료비 · 면접 등 담당 도메인 전반</div>
+    </div>
+    <div class="rec-item fade-up">
+      <div class="rec-num">최우수</div>
+      <div class="rec-text"><strong>KDT 해커톤 최우수상</strong><br>장관상 수상</div>
+    </div>
+    <div class="rec-item fade-up">
+      <div class="rec-num">연사</div>
+      <div class="rec-text"><strong>모두콘 컨퍼런스</strong><br>제품 기획 사례 발표</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING / WHAT'S NEXT -->
+<section id="closing">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><span class="idx">[06]</span> What's Next</div>
+    <h2 class="section-title">이런 문제를<br>함께 풀고 싶습니다</h2>
+  </div>
+  <p class="builds-intro fade-up" style="color:var(--ink);max-width:780px;margin:-40px 0 48px;">
+    지난 4년간 B2B 플랫폼의 운영 병목을 제품으로 바꾸며 다듬은 일하는 방식입니다.
+    아래 세 가지는 다음 팀에서도 그대로 가져갈 <strong>저의 작동 원리</strong>입니다.
+  </p>
+  <div class="other-grid">
+    <div class="other-card fade-up">
+      <div class="other-meta"><span>WAY OF WORKING</span><span>01</span></div>
+      <div class="other-title">현장의 병목을 제품 기회로</div>
+      <div class="other-desc">
+        정산을 직접 돌려보고 운영팀의 하루를 따라다니며 찾은 문제를,
+        일회성 수정이 아니라 <strong>정책과 구조</strong>로 풀어 반복되는 비용을 구조적으로 없앱니다.
+      </div>
+    </div>
+    <div class="other-card fade-up">
+      <div class="other-meta"><span>WAY OF WORKING</span><span>02</span></div>
+      <div class="other-title">가설을 세우고 숫자로 증명</div>
+      <div class="other-desc">
+        직감 대신 <strong>KPI·ROI·NPS</strong>로 가설을 세우고 출시 뒤 데이터로 검증합니다.
+        제품의 가치를 비즈니스 임팩트로 말하는 데 익숙합니다.
+      </div>
+    </div>
+    <div class="other-card fade-up">
+      <div class="other-meta"><span>WAY OF WORKING</span><span>03</span></div>
+      <div class="other-title">기획에서 멈추지 않고 직접 구현</div>
+      <div class="other-desc">
+        문제 정의부터 아키텍처·DB 설계·구현까지 직접 만들어 검증하는
+        <strong>빌더형 PO</strong>로서, 개발·디자인과 같은 언어로 협업합니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow"><span class="idx">[07]</span> Contact</div>
+  <h2 class="section-title">함께 만들어가고 싶은<br>제품이 있으신가요?</h2>
+  <p class="contact-sub">제품과 문제 해결에 대한 이야기는 언제든 환영입니다. 편하게 연락주세요.</p>
+  <div class="contact-links">
+    <button type="button" class="contact-link contact-reveal" data-type="email" data-u="dohyunhi13" data-d="naver.com">✉ 이메일 보기</button>
+    <button type="button" class="contact-link contact-reveal" data-type="tel" data-c1="82" data-c2="10" data-c3="4902" data-c4="2121">📱 연락처 보기</button>
+    <a href="https://www.youtube.com/watch?v=ZqbiyXteAcU&t=s" target="_blank" rel="noopener" class="contact-link">▶ 모두콘 연사 영상</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 김도현 — PRODUCT OWNER</span>
+  <span>B2B SAAS · PLATFORM DESIGN · SEOUL</span>
+</footer>
+
+<div id="zoomOverlay" class="zoom-overlay" aria-hidden="true">
+  <button class="zoom-close" type="button" aria-label="닫기">✕</button>
+  <div class="zoom-inner"></div>
+  <div class="zoom-hint">클릭 또는 ESC로 닫기</div>
+</div>
+
+<script>
+function toggleProject(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+/* Scroll reveal */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
+
+/* Count-up numbers */
+function countUp(el) {
+  const raw = el.textContent.trim();
+  const m = raw.match(/^([\d,]+)(.*)$/);
+  if (!m) return;
+  const target = parseInt(m[1].replace(/,/g, ''), 10);
+  const suffix = m[2];
+  const dur = 1300, start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = Math.round(target * eased);
+    el.textContent = val.toLocaleString('ko-KR') + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* Hero stats — animate on load */
+window.addEventListener('load', () => {
+  setTimeout(() => document.querySelectorAll('.stat-num .count').forEach(countUp), 600);
+});
+
+/* Outcome numbers — animate on scroll */
+const numObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      countUp(entry.target);
+      numObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.outcome-num, .rec-num').forEach(el => {
+  if (/^[\d,]+/.test(el.textContent.trim())) numObserver.observe(el);
+});
+
+/* Scroll progress bar */
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = pct + '%';
+}, { passive: true });
+
+/* Nav active section */
+const navLinks = document.querySelectorAll('.nav-links a');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.toggle('active', a.dataset.sec === entry.target.id));
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+['about','projects','other','experience','contact'].forEach(id => {
+  const s = document.getElementById(id);
+  if (s) sectionObserver.observe(s);
+});
+
+/* Auto-open first two projects */
+setTimeout(() => { toggleProject('proj1'); toggleProject('proj2'); }, 800);
+
+/* ── Other Work: expandable detail ── */
+function toggleMore(btn){
+  const card = btn.closest('.other-card');
+  if (!card) return;
+  const open = card.classList.toggle('open');
+  btn.textContent = open ? '접기' : '성과 자세히 보기';
+}
+
+/* ── Contact: click to reveal (anti-scrape) ── */
+document.querySelectorAll('.contact-reveal').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    if (!btn.dataset.revealed){
+      var val, href, d = btn.dataset;
+      if (d.type === 'email'){
+        val = d.u + '@' + d.d; href = 'mailto:' + val;
+        btn.textContent = '\u2709 ' + val;
+      } else {
+        val = '+' + d.c1 + ' ' + d.c2 + '-' + d.c3 + '-' + d.c4;
+        href = 'tel:+' + d.c1 + d.c2 + d.c3 + d.c4;
+        btn.textContent = '\ud83d\udcf1 ' + val;
+      }
+      btn.dataset.href = href; btn.dataset.revealed = '1';
+      btn.classList.add('revealed');
+    } else if (btn.dataset.href){
+      window.location.href = btn.dataset.href;
+    }
+  });
+});
+
+/* ── Diagram zoom lightbox ── */
+(function(){
+  var overlay = document.getElementById('zoomOverlay');
+  if (!overlay) return;
+  var inner = overlay.querySelector('.zoom-inner');
+  function open(svg){
+    inner.innerHTML = '';
+    inner.appendChild(svg.cloneNode(true));
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('svg').forEach(function(svg){
+    if (svg.closest('#zoomOverlay')) return;
+    if (svg.getBoundingClientRect().width < 260) return;
+    svg.style.cursor = 'zoom-in';
+    svg.addEventListener('click', function(){ open(svg); });
+  });
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay || e.target.classList.contains('zoom-close')) close();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>
